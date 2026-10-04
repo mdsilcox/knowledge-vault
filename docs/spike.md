@@ -28,7 +28,23 @@ Throwaway setup in `C:\Users\mikha\kvspike` (deleted after the spike): basic-mem
 7. **21 tools** include project, workspace and schema management that we don't need. Fine with tool search; a skill should steer Claude to the four that matter (search, read, write, edit).
 
 ## Results (iPhone)
-TODO: clone `knowledge-vault-data` in Obsidian with the Obsidian Git plugin, pull the `_spike` test notes, check the graph view.
+Free Obsidian plus the free Obsidian Git plugin, on the user's iPhone, against the private `knowledge-vault-data` repo.
+| Check | Result |
+|---|---|
+| Clone | Works, once two traps are avoided (below). |
+| Pull a change pushed from the PC | Works ("Git: Pull"). |
+| Wikilink between notes | Works. |
+| Graph view | Works. |
+
+How to set it up (this is the procedure for the user guide):
+1. New Obsidian vault on the phone, **not** stored in iCloud.
+2. Community plugins on; install and enable **Git**.
+3. Don't open the plugin's auth settings before cloning: with no repo yet it shows `fatal: --local can only be used inside a git repository`. Harmless.
+4. Command palette, **"Git: Clone an existing remote repo"**, URL `https://github.com/mdsilcox/knowledge-vault-data.git`, username `mdsilcox`, password = a fine-grained token scoped to that repo (Contents: read and write).
+5. **Clone into a subfolder** (e.g. `vault`), not the vault root: the root holds `.obsidian`, so a root clone fails with `destination already exists and is not an empty directory`. A subfolder also keeps the phone's Obsidian settings out of the repo. Check Settings, Git, Advanced, "Custom base path" says `vault`.
+6. The Identity (commit author) section can stay empty while the phone only reads.
 
 ## Verdict
-TODO after the iPhone test. PC side: basic-memory meets every PC must-have in the vision; no reason to fall back to a custom server.
+**basic-memory confirmed; no fallback to a custom server.** It meets every must-have in the vision that a spike can test: free local hybrid search that finds notes by meaning, clean Obsidian notes, a rebuildable index outside the vault, small token cost, and the vault readable on the iPhone over git for free. Open items move to D2 (permalink rewriting, line endings, which tools the skill uses) and Build 1 (live in-session test, `uv tool install` path).
+
+Spike notes were removed from the data repo afterwards (commit f453002 there) and the throwaway folder deleted.

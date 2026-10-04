@@ -15,4 +15,17 @@ One entry per decision: what was chosen, what was rejected, and why. Newest last
 - **Chosen:** adopt basic-memory as a user-level MCP server pointed at the vault folder (the user's pick in chat; the board's option picker was locked once the phase was active). This repo holds conventions (templates, layout, a skill, sync scripts), not a server.
 - **Rejected:** a custom Python MCP server (more to build and maintain; kept as the fallback if the spike fails a must-have); mcp-markdown-vault and vault-mcp (young, unverified on Windows, vault-mcp needs Ollama running); Smart Connections MCP (index updates only with Obsidian open); Local REST API servers (need Obsidian running).
 - **Why:** basic-memory already covers plain Markdown, free local hybrid search (FastEmbed plus sqlite-vec) and read/write tools, and keeps its index outside the vault. See docs/research/d1-survey.md.
-- **Pending:** confirmed by the spike (docs/spike.md).
+- **Confirmed** by the spike (docs/spike.md), 2026-10-04.
+
+## 2026-10-04: Runtime and install
+- **Chosen:** uv (installed globally by the user) provides Python 3.12+ and installs basic-memory as a tool. System Python stays 3.11.
+- **Why:** basic-memory needs Python 3.12+; uv is its recommended installer and keeps the install in a short path (Windows path-length limit broke an install in a deep folder).
+
+## 2026-10-04: Search mode
+- **Chosen:** basic-memory's default hybrid search (full text plus FastEmbed `bge-small-en-v1.5` vectors in sqlite-vec).
+- **Rejected:** vector-only (missed 1 of 4 reworded questions in the spike, under its 0.55 similarity cutoff).
+
+## 2026-10-04: Phone sync
+- **Chosen:** free Obsidian plus the free Obsidian Git plugin on the iPhone, cloning the private repo into a `vault` subfolder; the phone reads and pulls, the PC writes and pushes.
+- **Rejected:** Working Copy (pushing needs the paid tier); iCloud (fights with git, and the PC would need iCloud for Windows); GitSync (not needed, Obsidian Git worked).
+- **Why:** proved end to end in the spike: clone, pull, wikilinks and graph view all work.
