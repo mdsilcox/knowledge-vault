@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Node
+node_modules/
+
+# Editors and OS
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Local Claude settings
+.claude/settings.local.json
+
+# Obsidian per-device workspace state
+.obsidian/workspace*.json
