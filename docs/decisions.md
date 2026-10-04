@@ -29,3 +29,12 @@ One entry per decision: what was chosen, what was rejected, and why. Newest last
 - **Chosen:** free Obsidian plus the free Obsidian Git plugin on the iPhone, cloning the private repo into a `vault` subfolder; the phone reads and pulls, the PC writes and pushes.
 - **Rejected:** Working Copy (pushing needs the paid tier); iCloud (fights with git, and the PC would need iCloud for Windows); GitSync (not needed, Obsidian Git worked).
 - **Why:** proved end to end in the spike: clone, pull, wikilinks and graph view all work.
+
+## 2026-10-04: Search filter for problem questions (Build 1)
+- **Chosen:** the vault skill searches with `note_types` limited to pattern, finding, decision, research and note; project questions read the hub directly. The vault README gets `type: readme`.
+- **Rejected:** excluding hubs from the index (they are useful for project overviews and the graph); vector-only search (missed a reworded question in the spike).
+- **Why:** in the live test the hub and README outranked the real note in hybrid search. See docs/retro/b1.md.
+
+## 2026-10-04: Secret block scope (Build 1)
+- **Chosen:** the sync hook blocks a commit only for secrets in files changed by the current write.
+- **Rejected:** blocking on any secret anywhere in the vault (one old secret would block every later write).
