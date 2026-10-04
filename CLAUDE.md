@@ -28,7 +28,9 @@ TODO (filled once there is code: module, key functions and signatures).
 - Browser checks and experiments use a throwaway copy of vault data, never the user's real vault.
 
 ## Content rules
-TODO (from the vision: what goes in the vault, privacy rules, what Claude may write).
+- Two repos: this one (`mdsilcox/knowledge-vault`, public) holds tool code and conventions only. Vault notes live in `mdsilcox/knowledge-vault-data` (private). Never commit vault content here.
+- The vault holds only key, reusable findings, linked back to their source project; per-project memory stays where it is.
+- Full rules: `docs/vision.md` (what goes in, writing moments, non-goals).
 
 ## Plans and decisions
 - Progress and phase plans: Orchestra board (https://claude.ai/artifact/Eqis6DgyZMefwhzFM1KNta), project id `knowledge-vault`, phase prefix `kv~`.
