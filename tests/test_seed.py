@@ -67,7 +67,8 @@ def test_reworded_questions_find_seeded_patterns(vault):
         pytest.skip("basic-memory is not installed")
     env = dict(os.environ, PYTHONUTF8="1", PYTHONIOENCODING="utf-8")
     for question, expected in PATTERN_QUESTIONS:
-        out = subprocess.run([bm, "tool", "search-notes", question, "--json", "--page-size", "3"],
+        types = [arg for t in ("pattern", "finding", "decision", "research", "note") for arg in ("--type", t)]
+        out = subprocess.run([bm, "tool", "search-notes", question, "--json", "--page-size", "3", *types],
                              env=env, capture_output=True, text=True, check=True).stdout
         results = json.loads(out)["results"]
         assert results and results[0]["title"] == expected, question
