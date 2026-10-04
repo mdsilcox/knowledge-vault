@@ -1,0 +1,3 @@
+## Knowledge vault
+
+One vault of Markdown notes holds the reusable findings, patterns, decisions and research of every project (MCP server `basic-memory`; notes in `E:\Backup Desktop\Claude Code Projects\knowledge-vault-data`, synced to a private GitHub repo). Use it only when needed: search it when starting research or a stack choice or when a problem may have been solved before, and write to it at the writing moments (after a research report, when a reusable decision is logged, at a phase retro, when a problem is solved in a reusable way, or when asked). Load the `vault` skill before using it.
