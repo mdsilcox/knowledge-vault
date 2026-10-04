@@ -1,3 +1,8 @@
+---
+title: README
+type: readme
+---
+
 # Knowledge vault
 
 This repository holds one vault of Markdown notes: the reusable findings, patterns, decisions and research gathered across all projects. It is meant for the owner and for AI agents that search it before starting new work.

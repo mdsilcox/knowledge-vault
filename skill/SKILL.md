@@ -14,7 +14,7 @@ Tools (MCP server `basic-memory`): use only `search_notes`, `read_note`, `write_
 - Hitting an error or problem that might have been seen before.
 - The owner asks.
 
-Search once with a plain-language description of the problem (meaning matters more than exact words), read the top one or two notes that fit, and use them. Don't browse the vault or search for every small step. Say in a short line when a note helped ("The vault has a note on this from knowledge-vault: ...").
+Search once with `search_notes`, a plain-language description of the problem as `query` (meaning matters more than exact words) and `note_types: ["pattern", "finding", "decision", "research", "note"]`, so project hubs and the README don't crowd out real notes. Read the top one or two notes that fit and use them. For "what do we know about project X?", `read_note` the hub `projects/<slug>` instead; it lists every note of that project. Don't browse the vault or search for every small step. Say in a short line when a note helped ("The vault has a note on this from knowledge-vault: ...").
 
 ## When to write
 - After a research report: one `research` note for the survey, plus one `finding` per key fact.

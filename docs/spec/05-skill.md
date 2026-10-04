@@ -3,7 +3,7 @@
 A Claude Code skill (`~/.claude/skills/vault/SKILL.md`) that tells any session when to use the vault and how to write to it. The global CLAUDE.md section points to it in two or three lines, so sessions that never need the vault pay almost nothing.
 
 ## Content of the skill
-- **When to search** (only these): starting research or a stack choice; hitting an error or problem that might have been seen before; the owner asks ("check the vault", "have we solved this before?"). One search, then read the top one or two notes; don't browse.
+- **When to search** (only these): starting research or a stack choice; hitting an error or problem that might have been seen before; the owner asks ("check the vault", "have we solved this before?"). One search filtered to the five content types (hubs and the README otherwise outrank real notes in a small vault), then read the top one or two notes; don't browse. Questions about a whole project read its hub.
 - **When to write** (the agreed moments): after a research report; when a decision is logged; at a phase retro; when a problem is solved in a way worth reusing; whenever the owner says so.
 - **How to write:** search first and update a close match instead of duplicating; pick the type and folder from the data model; title as a short claim; fill the template's sections briefly; set `project`, `tags`, `created`, `status: active`, `source`; link related notes. The hook adds the project link, updates the hub and pushes, so Claude doesn't.
 - **Ask first** before deleting, moving or superseding a note; before writing anything that might be sensitive or personal; before rewriting most of an existing note.
