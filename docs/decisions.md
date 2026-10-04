@@ -38,3 +38,8 @@ One entry per decision: what was chosen, what was rejected, and why. Newest last
 ## 2026-10-04: Secret block scope (Build 1)
 - **Chosen:** the sync hook blocks a commit only for secrets in files changed by the current write.
 - **Rejected:** blocking on any secret anywhere in the vault (one old secret would block every later write).
+
+## 2026-10-04: Read the top 3-5 search results, not only the first (Build 2)
+- **Chosen:** keep basic-memory's default hybrid search; the skill scans the top 3-5 titles and reads the one or two that fit. The gate measures untuned questions as "fitting note in the top 3, at least 4 of 5".
+- **Rejected:** switching to vector-only (2 of 5 first, 5 of 5 in the top 3, against hybrid's 3 of 5 first and 4 of 5 in the top 3 on the same untuned questions: no clear winner); a bigger embedding model (possible later if ranking stays weak as the vault grows).
+- **Why:** with 28 notes, five questions written without looking at results put the right note first only 3 times out of 5 in hybrid mode. Broad notes (the survey, decisions) collect matches. Claude can judge from titles, so reading a few results costs little.

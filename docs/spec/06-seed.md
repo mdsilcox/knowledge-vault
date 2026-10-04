@@ -15,4 +15,5 @@ From `docs/research/d1-survey.md`, `docs/spike.md` and `docs/decisions.md`: abou
 - **Then** the `knowledge-vault` hub lists every seeded note, and there is at least one note of each type pattern, finding, decision and research.
 - **Then** every seeded note has a `source` pointing at a file in this repo.
 - **Given** a reworded question for each of three seeded patterns, **when** searched, **then** the pattern ranks first.
+- **Given** five questions written without looking at search results, **when** searched with the content-type filter, **then** at least four have a fitting note in the top 3 (the skill scans the top 3-5 titles).
 - **Then** the seeded notes are on GitHub, and the owner sees them on the phone after a pull (gate check).
