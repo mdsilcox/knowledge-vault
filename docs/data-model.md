@@ -27,7 +27,7 @@ knowledge-vault-data/
   notes/               the owner's own notes
   reading/  journal/   later (not in v1)
 ```
-A folder is created when its first note is written; empty folders are not committed.
+A folder is created when its first note is written; empty folders are not committed. basic-memory indexes every Markdown file, so it also gives the root README a small frontmatter block (`type: note`); the checker ignores root files, so that is harmless.
 
 ## Note types
 Every note has a type that sets its folder and its body sections. Body sections are a guide for Claude, not enforced; a short note is fine.
