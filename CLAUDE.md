@@ -5,7 +5,7 @@ Shared context for the main agent and every subagent. Read this instead of explo
 ## What this is
 A personal knowledge vault: notes, research findings and Claude's memory across projects as plain Markdown files (Obsidian-compatible), with search, a graph view, and a way for Claude Code sessions to read and write it (for example an MCP server). Owner: the user (single user, Windows 11).
 
-**Current stage:** Build 1 closed (installed and live on the owner's PC and iPhone). Next: Build 2 (seed this project's findings, skill scenario checks, user guide). Anything marked TODO is undecided; do not build on guesses.
+**Current stage:** v1 done (Build 2 closed): installed, seeded with 29 notes, user guide written, skill scenarios passed. Next: seeding other projects (ask Claude there at its next retro); revisit search ranking as the vault grows (see `docs/retro/b2.md`). Anything marked TODO is undecided; do not build on guesses.
 
 ## Stack and commands
 - **Vault server:** [basic-memory](https://github.com/basicmachines-co/basic-memory) 0.23+ as a user-level MCP server, hybrid search (SQLite full text plus FastEmbed `bge-small-en-v1.5` in sqlite-vec). Index lives outside the vault (`~/.basic-memory/memory.db`, or `BASIC_MEMORY_CONFIG_DIR`). Decisions and reasons: `docs/decisions.md`; measurements and gotchas: `docs/spike.md`.
@@ -26,7 +26,8 @@ A personal knowledge vault: notes, research findings and Claude's memory across 
   - `docs/spike.md`: D1 spike results, measured costs, phone setup procedure
   - `docs/data-model.md`: note types, frontmatter, layout, links, lifecycle, invariants (the first contract)
   - `docs/spec/`: one spec per feature with Given/When/Then criteria; `README.md` there holds the code contract
-  - `docs/retro/`: phase retros (`b1.md`); vault notes cite them as `source`
+  - `docs/retro/`: phase retros (`b1.md`, `b2.md`); vault notes cite them as `source`
+  - `docs/user-guide.md`: the owner's guide (install, undo, phone, everyday use, fixing things)
 - `kv/`: the Python package (glue around basic-memory, not a server)
 - `tests/`: acceptance tests; `conftest.py` has the vault and git fixtures; `fixtures/spike_notes.py` is the spike's 15-note vault
 - `templates/`, `skill/`, `vault-seed/`: note templates, the vault skill, files seeded into the data repo
