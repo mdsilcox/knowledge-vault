@@ -79,7 +79,7 @@ def handle_hook(payload: dict, vault: Path) -> SyncResult:
     _git(vault, "add", "-A")
     if _git(vault, "diff", "--cached", "--quiet").returncode == 1:
         inputs = payload.get("tool_input") or {}
-        title = inputs.get("title") or inputs.get("identifier") or ""
+        title = inputs.get("title") or str(inputs.get("identifier") or "").rsplit("/", 1)[-1]
         verb = VERBS[tool.rsplit("__", 1)[1]]
         c = _git(vault, "commit", "-q", "-m", f"vault: {verb} {title}".strip())
         if c.returncode != 0:

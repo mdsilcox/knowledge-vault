@@ -58,6 +58,13 @@ def test_missing_hub_is_created(tmp_path):
     assert block(hub.read_text(encoding="utf-8")) == ["- [[First note]] (finding)"]
 
 
+def test_created_hub_has_lf_line_endings(tmp_path):
+    vault = tmp_path / "v"
+    write_note(vault, "First note", project="new-project")
+    update_hubs(vault)
+    assert b"\r\n" not in (vault / "projects" / "new-project.md").read_bytes()
+
+
 def test_update_hubs_is_idempotent(tmp_path):
     vault = tmp_path / "v"
     write_hub(vault)

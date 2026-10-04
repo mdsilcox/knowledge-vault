@@ -66,7 +66,7 @@ def update_hubs(vault: Path) -> list[Path]:
     for project in members:
         if project.lower() not in hubs:
             path = vault / "projects" / f"{project}.md"
-            text = read_text(TEMPLATE)
+            text = read_text(TEMPLATE).replace("\r\n", "\n")  # git may check templates out as CRLF
             text = text.replace("{{project}}", project).replace("{{date}}", date.today().isoformat())
             path.parent.mkdir(parents=True, exist_ok=True)
             _write(path, text)
